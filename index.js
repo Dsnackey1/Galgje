@@ -2,7 +2,7 @@
 var readlineSync = require('readline-sync');
 readlineSync.setDefaultOptions({limit: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']});
 
-const { displayWordSoFar, isGameWon, isGameLost } = require("./gamelogic");
+const { displayWordSoFar, isGameWon, isGameLost, faults } = require("./gamelogic");
 
 
 function game(word, guesses) {
@@ -18,6 +18,7 @@ function game(word, guesses) {
   }
 
   console.log("Dit heb je tot nu toe geraden: ", guesses);
+  console.log(faults(word, guesses));
   
   console.log(displayWordSoFar(word, guesses));
 

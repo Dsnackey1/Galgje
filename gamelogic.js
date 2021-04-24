@@ -59,8 +59,24 @@ function isGameLost(word, guesses) {
   }
 }
 
+function faults(word, guesses) {
+  
+  let counter = 0;
+  
+  for (let i = 0; i < guesses.length; i++) {
+    const guessedLetter = guesses[i];
+    const isGuessed = word.includes(guessedLetter);
+
+    if (!isGuessed) {
+      counter += 1;
+    } 
+  }
+  return counter + " fout van de 7"
+}
+
 module.exports = {
   displayWordSoFar: displayWordSoFar,
   isGameWon: isGameWon,
   isGameLost: isGameLost,
+  faults: faults,
 };
