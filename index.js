@@ -1,26 +1,30 @@
-const { question } = require("readline-sync");
+// const { question } = require("readline-sync");
+var readlineSync = require('readline-sync');
+readlineSync.setDefaultOptions({limit: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']});
+
 const { displayWordSoFar, isGameWon, isGameLost } = require("./gamelogic");
+
 
 function game(word, guesses) {
   
   if (isGameWon(word, guesses)) {
-    console.log("je hebt Gewonnen");
+    console.log("je hebt Gewonnen") + console.log(displayWordSoFar(word, guesses));
     return;
   }
 
   if (isGameLost(word, guesses)) {
-    console.log("Je hebt verloren");
+    console.log("Je hebt verloren") + console.log(displayWordSoFar(word, guesses));
     return;
   }
-
 
   console.log("Dit heb je tot nu toe geraden: ", guesses);
   
   console.log(displayWordSoFar(word, guesses));
 
-  const letter = question("Raad een letter: ");
+ 
+  const letter = readlineSync.question("Raad een letter: ");
 
-  // voeg de geraden letter toe aan de array met guesses
+  // // voeg de geraden letter toe aan de array met guesses
   guesses.push(letter);
 
   // volgende ronde! we roepen game nog een keer aan

@@ -52,7 +52,7 @@ function isGameLost(word, guesses) {
       counter += 1;
     } 
   }
-  if (counter === 7) {
+  if (counter > 6) {
     return true;
   } else {
     return false;
