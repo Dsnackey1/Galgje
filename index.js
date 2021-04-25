@@ -1,6 +1,6 @@
 // const { question } = require("readline-sync");
 var readlineSync = require('readline-sync');
-readlineSync.setDefaultOptions({limit: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']});
+readlineSync.setDefaultOptions({limit: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']}); //dit is een test
 
 const { displayWordSoFar, isGameWon, isGameLost, faults } = require("./gamelogic");
 
@@ -22,8 +22,13 @@ function game(word, guesses) {
   
   console.log(displayWordSoFar(word, guesses));
 
+
+
  
-  const letter = readlineSync.question("Raad een letter: ");
+  var letter = readlineSync.question("Raad een letter: ");
+
+  letter=letter.toLowerCase()
+
 
   // // voeg de geraden letter toe aan de array met guesses
   guesses.push(letter);
