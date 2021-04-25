@@ -22,10 +22,12 @@ function game(word, guesses) {
   
   console.log(displayWordSoFar(word, guesses));
 
+
+
  
-  const letter = readlineSync.question("Raad een letter: ");
+  var letter = readlineSync.question("Raad een letter: ");
 
-
+  letter=letter.toLowerCase()
 
 
   // // voeg de geraden letter toe aan de array met guesses

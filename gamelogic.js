@@ -1,3 +1,7 @@
+
+
+//alle functies gemaakt
+
 function displayWordSoFar(word, guesses) {
   
   let displayedWord = "";
